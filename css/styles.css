@@ -136,6 +136,7 @@ img {
 }
 
 .nav-link {
+    position: relative;
     color: currentColor;
     padding-top: 32px;
     padding-bottom: 32px;
@@ -144,6 +145,19 @@ img {
 
 .nav-link.current {
     color: var(--accent-clr);
+}
+
+.nav-link.current::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-clr);
+
 }
 
 .header-contacts {
@@ -239,6 +253,45 @@ img {
     background-color: #188CE8;
 }
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.modal-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 528px;
+    height: 581px;
+    background-color: #FFFFFF;
+}
+
+.modal-btn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+
+}
+
 /* #endregion */
 /* #region Advantages-section */
 .advantages-icons {
@@ -298,10 +351,42 @@ img {
 .img-list {
     display: flex;
     align-items: center;
+
 }
 
 .img-item {
     margin-right: 30px;
+    position: relative;
+
+}
+
+.img-item::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(47, 48, 58, 0.8);
+
+
+}
+
+.img-item .img-par {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    padding-right: 82px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.14;
+    color: #FFFFFF;
 }
 
 .img-item:last-child {
@@ -528,6 +613,40 @@ img {
 .gallery-item:nth-of-type(9) {
     margin-bottom: 0;
 }
+
+.gallery-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 150, 243, 0.9);
+    transform: translateY(100%);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-text {
+    position: absolute;
+    bottom: 0;
+    padding: 63px 24px;
+    width: 100%;
+    height: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    color: #FFFFFF;
+}
+
+
 
 /* #endregion */
 /* #endregion */

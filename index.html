@@ -68,8 +68,18 @@
       <section class="hero-section">
         <div class="container hero-container">
           <h1 class="hero-tittle">Эффективные решения для вашего бизнеса</h1>
-          <button class="hero-button" type="button">Заказать услугу</button>
+          <button class="hero-button" type="button" data-modal-open>Заказать услугу</button>
         </div>
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal-wrapper">
+        <button class="modal-btn" data-modal-close>
+          <svg width="11" height="11">
+            <use href="./images/icons.svg#modal-cross"></use>
+          </svg>
+        </button>
+        <form class="modal-form"></form>
+        </div>
+      </div>
       </section>
       <!-- Плюсы компании -->
       <section class="section">
@@ -127,30 +137,33 @@
       <section class="img-section section">
         <div class="container img-container">
           <h2 class="secondary-tittle img-tittle">Чем мы занимаемся</h2>
-          <ul class="list img-list grid">
-            <li class="img-item grid-item">
+          <ul class="list img-list">
+            <li class="img-item">
               <img
                 src="./images/studio-page/first-images-section/sheme.jpg"
                 alt="Коддинг по алгоритмам"
                 width="370"
                 height="294"
               />
+              <p class="img-par">Десктопные приложения</p>
             </li>
-            <li class="img-item grid-item">
+            <li class="img-item">
               <img
                 src="./images/studio-page/first-images-section/mobile-apps.jpg"
                 alt="Разработка под мобильные устройства"
                 width="370"
                 height="294"
               />
+              <p class="img-par"">Мобильные приложения</p>
             </li>
-            <li class="img-item grid-item">
+            <li class="img-item">
               <img
                 src="./images/studio-page/first-images-section/colors.jpg"
                 alt="Выбор цветовой палитры"
                 width="370"
                 height="294"
               />
+              <p class="img-par"">Дизайнерские решения</p>
             </li>
           </ul>
         </div>
@@ -552,5 +565,6 @@
         </div>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
