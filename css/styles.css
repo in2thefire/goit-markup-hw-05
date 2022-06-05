@@ -11,6 +11,8 @@
     /* Background colors */
     --main-back-clr: #FFFFFF;
     --secondary-back-clr: #2F303A;
+    /* Animation */
+    --anim: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* #endregion */
@@ -64,6 +66,7 @@ img {
 
 .link {
     text-decoration: none;
+    transition: background-color var(--anim), color var(--anim);
 }
 
 .link:focus,
@@ -141,6 +144,7 @@ img {
     padding-top: 32px;
     padding-bottom: 32px;
     display: block;
+    transition: color var(--anim);
 }
 
 .nav-link.current {
@@ -175,7 +179,7 @@ img {
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
-    letter-spacing: 0.02em
+    letter-spacing: 0.02em;
 }
 
 .header-contacts-item:first-child {
@@ -188,6 +192,7 @@ img {
     display: flex;
     align-items: center;
     color: var(--third-clr);
+    transition: color var(--anim);
 
 }
 
@@ -209,7 +214,7 @@ img {
     background-image: linear-gradient(to left, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/studio-page/background-images/hero-bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+
 }
 
 .hero-container {
@@ -244,6 +249,7 @@ img {
     cursor: pointer;
     padding: 10px 32px;
     border: none;
+    transition: background-color var(--anim);
 
 
 }
@@ -261,6 +267,7 @@ img {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 10;
+    transition: opacity 700ms ease-in-out, visibility 700ms ease-in-out;
 }
 
 .backdrop.is-hidden {
@@ -277,6 +284,12 @@ img {
     width: 528px;
     height: 581px;
     background-color: #FFFFFF;
+    transition: transform 300ms ease-in-out 200ms, opacity 300ms ease-in-out 200ms;
+}
+
+.backdrop .modal-wrapper {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
 }
 
 .modal-btn {
@@ -291,6 +304,7 @@ img {
 
 
 }
+
 
 /* #endregion */
 /* #region Advantages-section */
@@ -456,6 +470,8 @@ img {
     height: 44px;
     border-radius: 50%;
     background-color: #FFFFFF;
+    transition: background-color var(--anim), color var(--anim);
+
 }
 
 .social-item:not(:last-child) {
@@ -498,6 +514,7 @@ img {
 
     border: 1px solid #AFB1B8;
     border-radius: 4px;
+    transition: border-color var(--anim);
 }
 
 .clients-link:hover,
@@ -547,6 +564,7 @@ img {
     letter-spacing: 0.03em;
     border: none;
     padding: 6px 22px;
+    transition: background-color var(--anim), color var(--anim);
 
 }
 
@@ -627,7 +645,7 @@ img {
     height: 100%;
     background: rgba(33, 150, 243, 0.9);
     transform: translateY(100%);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--anim);
 }
 
 .gallery-item:hover .gallery-overlay {
